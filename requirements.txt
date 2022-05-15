@@ -1,0 +1,10 @@
+Django==4.0.2
+
+django-cors-headers==3.11.0
+django-filter==21.1
+djangorestframework==3.13.1
+fpdf2==2.5.1
+openpyxl==3.0.9
+requests==2.27.1
+PyPDF2==1.26.0
+Pillow==9.0.1
