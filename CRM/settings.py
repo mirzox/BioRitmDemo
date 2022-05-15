@@ -220,61 +220,61 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     ('1 0 * * *', 'order.cron.my_cron_job', '>> ' + os.path.join(BASE_DIR, 'logs/cron.log' + ' 2>&1 ')),
 # ]
 
-LOG_DIR = os.path.join(BASE_DIR, 'logs/')
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-        },
-    },
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse',
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-    },
-    'handlers': {
-        'file': {
-            'level': 'DEBUG' if DEBUG else 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': f"{LOG_DIR}debug.log",
-            'formatter': 'verbose' if DEBUG else 'simple'
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler',
-            'formatter': 'verbose'
-        },
-        # 'db_queries': {
-        #     'level': 'DEBUG',
-        #     'filters': ['require_debug_true'],
-        #     'class': 'logging.FileHandler',
-        #     'filename': f"{LOG_DIR}db_queries.log",
-        # }
-    },
-    'loggers': {
-        # 'django': {
-        #     'handlers': ['db_queries'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
-        'warnings': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        }
-    },
-}
+# LOG_DIR = os.path.join(BASE_DIR, 'logs/')
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#             'style': '{',
+#         },
+#         'simple': {
+#             'format': '{levelname} {message}',
+#             'style': '{',
+#         },
+#     },
+#     'filters': {
+#         'require_debug_false': {
+#             '()': 'django.utils.log.RequireDebugFalse',
+#         },
+#         'require_debug_true': {
+#             '()': 'django.utils.log.RequireDebugTrue',
+#         },
+#     },
+#     'handlers': {
+#         'file': {
+#             'level': 'DEBUG' if DEBUG else 'INFO',
+#             'class': 'logging.FileHandler',
+#             'filename': f"{LOG_DIR}debug.log",
+#             'formatter': 'verbose' if DEBUG else 'simple'
+#         },
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'filters': ['require_debug_false'],
+#             'class': 'django.utils.log.AdminEmailHandler',
+#             'formatter': 'verbose'
+#         },
+#         # 'db_queries': {
+#         #     'level': 'DEBUG',
+#         #     'filters': ['require_debug_true'],
+#         #     'class': 'logging.FileHandler',
+#         #     'filename': f"{LOG_DIR}db_queries.log",
+#         # }
+#     },
+#     'loggers': {
+#         # 'django': {
+#         #     'handlers': ['db_queries'],
+#         #     'level': 'DEBUG',
+#         #     'propagate': True,
+#         # },
+#         'warnings': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         }
+#     },
+# }
 
 
 
