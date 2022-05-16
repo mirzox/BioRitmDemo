@@ -37,7 +37,7 @@ def file_dir_path(instance, filename):
 
 class Parameters(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, unique=True)
-    name = models.CharField(max_length=255, unique=True, verbose_name="Название")
+    name = models.TextField(unique=True, verbose_name="Название")
     norm = models.TextField(null=True, blank=True, verbose_name="Норма")
     file = models.FileField(upload_to=file_dir_path, null=True, blank=True, verbose_name="Файл")
 
